@@ -1,0 +1,35 @@
+﻿
+@model List<Movie_Rental_Tri.Context.Table_Movie>
+@{
+    ViewBag.Title = "MoviesList";
+}
+
+
+<table class="table table-hover">
+    <tr>
+        <th> Movie Title </th>
+        <th> Movie Description </th>
+        <th> Rent Status </th>
+        <th> Rent Date </th>
+        <th> Delete Status </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td> @item.Movie_Title </td>
+            <td> @item.Movie_Description </td>
+            <td> @item.IsRented </td>
+            <td> @item.Rental_Date </td>
+            <td> @item.isDeleted </td>
+            <td>
+                <a href="#" class="btn btn-success"> RENT </a>
+                <a href="@Url.Action("DeleteMovie", new {ID =@item.Movie_ID})" 
+                   {item.User_ID})" class="btn btn-danger">  DELETE </a>
+            </td>
+        </tr>
+    }
+</table>
+
+
+

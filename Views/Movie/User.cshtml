@@ -1,0 +1,34 @@
+﻿@model Movie_Rental_Tri.Context.Table
+
+    @{
+        ViewBag.Title = "User";
+    }
+
+    @using (Html.BeginForm("AddUser", "Movie", FormMethod.Post))
+    {
+        <div class= ="container">
+            <div class="form-group">
+                <label> Full Name</label>
+                @Html.TextBoxFor(x => x.Full_Name, new
+           { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                <label> Email Address</label>
+                @Html.TextBoxFor(x => x.Email_Address, new
+           { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                <label> Password</label>
+                @Html.TextBoxFor(x => x.Password, new
+           { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary"> Submit</button>
+            </div>
+
+        </div>
+    }
+

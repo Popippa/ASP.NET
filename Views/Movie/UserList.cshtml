@@ -1,0 +1,25 @@
+﻿@model List<Movie_Rental_Tri.Context.Table>
+@{
+    ViewBag.Title = "UserList";
+}
+
+<table class="table table-hover">
+    <tr>
+        <th> Full Name </th>
+        <th> Email </th>
+        <th> Password </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td> @item.Full_Name </td>
+            <td> @item.Email_Address </td>
+            <td> @item.Password </td>
+            <td>
+
+                <a href="@Url.Action("DeleteUser", new {ID =@item.User_ID})" {item.User_ID})" class="btn btn-danger">  DELETE </a>
+            </td>
+        </tr>
+    }
+</table>
